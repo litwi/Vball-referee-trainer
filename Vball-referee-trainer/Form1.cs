@@ -22,9 +22,11 @@ namespace Vball_referee_trainer
             var random = new Random();
             var rotationFiles = Directory.GetFiles("C:\\Users\\Owner\\Vball-referee-trainer\\ReceiveRotations\\", "*.png", SearchOption.AllDirectories);
 
-            RotationPictureBox.ImageLocation = rotationFiles[random.Next(rotationFiles.Length)];
+            string selectedFile = rotationFiles[random.Next(rotationFiles.Length)];
 
-            correctRotation = true;
+            RotationPictureBox.ImageLocation = selectedFile;
+
+            correctRotation = selectedFile.ToLower().Contains("correct");
         }
 
         private void CorrectButton_Click(object sender, EventArgs e)
