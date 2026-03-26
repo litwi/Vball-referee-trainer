@@ -32,6 +32,7 @@
             CorrectButton = new Button();
             IncorrectButton = new Button();
             RotationPictureBox = new PictureBox();
+            AnswerTextbox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)RotationPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             CorrectButton.TabIndex = 1;
             CorrectButton.Text = "Correct";
             CorrectButton.UseVisualStyleBackColor = true;
+            CorrectButton.Click += CorrectButton_Click;
             // 
             // IncorrectButton
             // 
@@ -62,6 +64,7 @@
             IncorrectButton.TabIndex = 2;
             IncorrectButton.Text = "Incorrect";
             IncorrectButton.UseVisualStyleBackColor = true;
+            IncorrectButton.Click += IncorrectButton_Click;
             // 
             // RotationPictureBox
             // 
@@ -71,11 +74,20 @@
             RotationPictureBox.TabIndex = 3;
             RotationPictureBox.TabStop = false;
             // 
+            // AnswerTextbox
+            // 
+            AnswerTextbox.BorderStyle = BorderStyle.FixedSingle;
+            AnswerTextbox.Location = new Point(381, 307);
+            AnswerTextbox.Name = "AnswerTextbox";
+            AnswerTextbox.Size = new Size(100, 23);
+            AnswerTextbox.TabIndex = 4;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(AnswerTextbox);
             Controls.Add(RotationPictureBox);
             Controls.Add(IncorrectButton);
             Controls.Add(CorrectButton);
@@ -84,6 +96,7 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)RotationPictureBox).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -92,5 +105,6 @@
         private Button CorrectButton;
         private Button IncorrectButton;
         private PictureBox RotationPictureBox;
+        private TextBox AnswerTextbox;
     }
 }
