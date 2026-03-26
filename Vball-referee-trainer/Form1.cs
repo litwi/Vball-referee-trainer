@@ -1,4 +1,8 @@
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Security.Cryptography.Xml;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Net.WebRequestMethods;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Vball_referee_trainer
 {
@@ -15,7 +19,10 @@ namespace Vball_referee_trainer
 
         private void GenerateButton_Click(object sender, EventArgs e)
         {
-            RotationPictureBox.ImageLocation = "C:\\Users\\Owner\\Vball-referee-trainer\\ReceiveRotations\\Rot 1 - correct(1).png";
+            var random = new Random();
+            var rotationFiles = Directory.GetFiles("C:\\Users\\Owner\\Vball-referee-trainer\\ReceiveRotations\\", "*.png", SearchOption.AllDirectories);
+
+            RotationPictureBox.ImageLocation = rotationFiles[random.Next(rotationFiles.Length)];
 
             correctRotation = true;
         }
