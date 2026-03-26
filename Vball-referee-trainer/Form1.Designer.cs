@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GenerateButton = new Button();
+            GenerateButton = new Button();
             CorrectButton = new Button();
             IncorrectButton = new Button();
+            RotationPictureBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)RotationPictureBox).BeginInit();
             SuspendLayout();
             // 
             // GenerateButton
             // 
-            this.GenerateButton.Location = new Point(142, 357);
-            this.GenerateButton.Name = "GenerateButton";
-            this.GenerateButton.Size = new Size(111, 39);
-            this.GenerateButton.TabIndex = 0;
-            this.GenerateButton.Text = "Generate";
-            this.GenerateButton.UseVisualStyleBackColor = true;
+            GenerateButton.Location = new Point(142, 357);
+            GenerateButton.Name = "GenerateButton";
+            GenerateButton.Size = new Size(111, 39);
+            GenerateButton.TabIndex = 0;
+            GenerateButton.Text = "Generate";
+            GenerateButton.UseVisualStyleBackColor = true;
+            GenerateButton.Click += GenerateButton_Click;
             // 
             // CorrectButton
             // 
@@ -60,16 +63,26 @@
             IncorrectButton.Text = "Incorrect";
             IncorrectButton.UseVisualStyleBackColor = true;
             // 
+            // RotationPictureBox
+            // 
+            RotationPictureBox.Location = new Point(194, 65);
+            RotationPictureBox.Name = "RotationPictureBox";
+            RotationPictureBox.Size = new Size(361, 220);
+            RotationPictureBox.TabIndex = 3;
+            RotationPictureBox.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(RotationPictureBox);
             Controls.Add(IncorrectButton);
             Controls.Add(CorrectButton);
-            Controls.Add(this.GenerateButton);
+            Controls.Add(GenerateButton);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)RotationPictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -78,5 +91,6 @@
         private Button GenerateButton;
         private Button CorrectButton;
         private Button IncorrectButton;
+        private PictureBox RotationPictureBox;
     }
 }
